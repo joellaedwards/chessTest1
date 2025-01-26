@@ -1,5 +1,6 @@
 package chess;
 
+import chess.PieceMoves.BishopMoves;
 import chess.PieceMoves.KnightMoves;
 
 import java.lang.reflect.Array;
@@ -59,6 +60,9 @@ public class ChessPiece {
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         if (type == PieceType.KNIGHT) {
             return new KnightMoves().returnKnightMoves(board, myPosition, pieceColor);
+        }
+        if (type == PieceType.BISHOP) {
+            return new BishopMoves().returnBishopMoves(board, myPosition, pieceColor);
         }
         return null;
     }
